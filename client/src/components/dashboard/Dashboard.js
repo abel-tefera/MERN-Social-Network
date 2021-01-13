@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getCurrentProfile } from '../../actions/profileActions';
 import Spinner from '../layout/Spinner';
+import DashboardLinks from "./DashboardLinks";
 
 const Dashboard = ({
   getCurrentProfile,
@@ -22,7 +23,9 @@ const Dashboard = ({
         <i className='fas fa-user' /> Welcome {user && user.name}
       </p>
       {profile !== null ? (
-        <Fragment>Profile</Fragment>
+        <Fragment>
+          <DashboardLinks />
+        </Fragment>
       ) : (
         <Fragment>
           {' '}
